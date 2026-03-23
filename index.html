@@ -55,8 +55,10 @@
             let isChecked = document.getElementById("apple").checked;
             let displayElement = document.getElementById("M");
             
+
             if (isChecked) {
                 displayElement.innerHTML = "We will remember your info brathar";
+                
             } else {
                 displayElement.innerHTML = "";
             }
@@ -67,9 +69,19 @@
             let user = document.getElementById("Name").value;
             let pass = document.getElementById("Passy").value;
 
-            if (user === "Blue" && pass === "Pumpkin223") {
+            if (user === "" || pass === "") {
+                alert("error.."); 
+
+            } 
+            
+            
+
+            else if (user === "Blue" && pass === "Pumpkin223") {
                 alert("Login Success!");
-            } else {
+            
+            } 
+              
+            else {
                 alert("Ur login details r incorrect brathar");
             }
         }
