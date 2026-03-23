@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q4Seatwork1</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body{
             background-color: rgb(231, 243, 253);
@@ -30,18 +31,21 @@
         <h1>Log in</h1>
         <form>
             <p>Username</p>
-            <input type="text" id="Kurt" style="padding: 10px 80px; font-size: 18px; text-align: center;">
+            <input type="text" id="Name" style="padding: 10px 80px; font-size: 18px; text-align: center;">
             <p>Password</p>
-            <input type="text" style="padding: 10px 80px; font-size: 18px;text-align: center;">
+            <input type="text" id="Passy" style="padding: 10px 80px; font-size: 18px;text-align: center;">
             <br><br>
             <button class="btn btn-success" style="padding: 10px 20px; font-size: 18px;" onclick="KurtFunction()">Login</button>
-            <input type="reset"style="padding: 10px 20px; font-size: 18px;">
+            <input type="reset"  style="padding: 10px 20px; font-size: 18px;">
         </form>
 
     </div>
     <script>
         function KurtFunction() {
             let Kurt= document.getElementById("checkboxID").checked;
+
+            let user = document.getElementById("Name").value;
+            let pass = document.getElementById("Passy").value;
 
             switch(Kurt) {
                 case true:
