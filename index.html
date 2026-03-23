@@ -6,55 +6,71 @@
     <title>Q4Seatwork1</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        body{
-            background-color: rgb(231, 243, 253);
-        }
-        .Eimee{
+        body { background-color: rgb(231, 243, 253); }
+        .Eimee {
             background-color: rgb(181, 218, 248);
-            border: auto;
             border-radius: 25px;
             height: 600px;
             width: 500px;
-            margin-right: auto;
-            margin-left: auto;
+            margin: 20px auto;
             text-align: center;
+            padding: 20px;
             color: rgb(112, 112, 242);
             font-weight: bold;
             font-size: 25px;
         }
-
+        input { padding: 10px; font-size: 18px; text-align: center; border-radius: 5px; border: 1px solid #ccc; }
+        .btn{
+            width: 100px;
+            height: 50px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(143, 162, 255);
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="Eimee">
-        <br>
         <h1>Log in</h1>
-        <form>
+        <form id="loginForm">
             <p>Username</p>
-            <input type="text" id="Name" style="padding: 10px 80px; font-size: 18px; text-align: center;">
+            <input type="text" id="Name" class="">
             <p>Password</p>
-            <input type="text" id="Passy" style="padding: 10px 80px; font-size: 18px;text-align: center;">
+            <input type="password" id="Passy">
             <br><br>
-            <button class="btn btn-success" style="padding: 10px 20px; font-size: 18px;" onclick="KurtFunction()">Login</button>
-            <input type="reset"  style="padding: 10px 20px; font-size: 18px;">
+            
+            <input type="checkbox" id="apple" onclick="toggleYummy()">
+            <label for="apple">Remember my info</label>
+            
+            <p id="M" style="color: rgb(110, 165, 255); font-size: 20px; height: 30px;"></p>
+            
+            <button type="button" class="btn btn-success" onclick="LoginFunction()">Login</button>
+            <button type="reset" class="btn btn-secondary" onclick="document.getElementById('M').innerHTML=''">Clear all</button>
         </form>
-
     </div>
-    <script>
-        function KurtFunction() {
-            let Kurt= document.getElementById("checkboxID").checked;
 
+    <script>
+        function toggleYummy() {
+            let isChecked = document.getElementById("apple").checked;
+            let displayElement = document.getElementById("M");
+            
+            if (isChecked) {
+                displayElement.innerHTML = "We will remember your info brathar";
+            } else {
+                displayElement.innerHTML = "";
+            }
+        }
+
+        
+        function LoginFunction() {
             let user = document.getElementById("Name").value;
             let pass = document.getElementById("Passy").value;
 
-            switch(Kurt) {
-                case true:
-
-                break;
-                
-                case false:
-
-                break;
+            if (user === "Blue" && pass === "Pumpkin223") {
+                alert("Login Success!");
+            } else {
+                alert("Ur login details r incorrect brathar");
             }
         }
     </script>
